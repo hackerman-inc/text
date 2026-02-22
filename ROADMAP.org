@@ -9,20 +9,19 @@
 - Everything as text files
 - Multi-cursor editing
 - Multiple views, single document
-- Create your own themes
-- Local LLMs
-- Zero-latency typing (<10ms)
+- Create your own theme
+- Support for local LLMs
+- Zero-latency typing (sub 10ms)
 - Copilot-like code completion
 - Project-wide search
 - Keybind custom functions
 - Emacs-like org mode for notes
-- Inline shell, eval, and AI chat
+- Inline shell and Python eval
 
 * In progress
 
-- Reliability bug fixes (137 to go)
-- Bring your own lexer
-- Sublime-like performance
+- Local-first AI rework (focus on local-first and fast code completion, auto complete suggestions)
+- Bring your own lexer (Cython-based)
 
 ** Testing
 
@@ -32,6 +31,7 @@
 
 * Ideas
 
-- Remote development (requested by [[@asyncze]])
-- Virtual buffers for /very/ large files (requested by [[@asyncze]])
+- Support for customizing syntax colors per language (requested by [[@asyncze]])
+- Open buffers persist on disk between sessions (requested by [[@asyncze]])
+- Sublime-like performance on very large files (requested by [[@asyncze]])
 
