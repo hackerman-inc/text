@@ -14,8 +14,8 @@ Hackerman Text is free for personal or evaluation purposes (non-commercial only)
 Commercial use requires a license. You can buy one here: [[https://hackerman.ai/]]
 
 
-[[#how-to-setup-code-completion][How to setup code completion]]
-[[#inline-commands][Inline commands]]
+- [[#how-to-setup-code-completion][How to setup code completion]]
+- [[#inline-commands][Inline commands]]
 
 
 ** How to setup code completion
