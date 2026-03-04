@@ -1,2 +1,66 @@
 
 [[text.jpg]]
+
+* Quickstart
+
+First of all, thank you for trying *Hackerman Text*!
+
+- Suggestions, please submit [[https://github.com/HackermanAI/Text/discussions/categories/ideas][feature request]].
+- Bugs or other issues, please submit [[https://github.com/HackermanAI/Text/issues][bug report]].
+
+Hackerman Text is free for personal or evaluation purposes (non-commercial only). We are 100% user-funded, so please consider purchasing a license to support continued development.
+
+Commercial use requires a license. You can buy one here: [[https://hackerman.ai/]]
+
+
+** How to setup code completion
+
+*** Ollama
+
+Hackerman Text can run some FIM/next-edit models via Ollama for very fast and 100% local code completion.
+
+You need to install Ollama, and download one of the recommended models (such as [[https://ollama.com/library/qwen2.5-coder]]).
+
+Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
+
+#+begin_src
+[models]
+code_completion                     ollama, qwen2.5-coder:1.5b
+#+end_src
+
+*** Mistral
+
+Create an account and get your api key, see [[https://docs.mistral.ai/getting-started/quickstart]].
+
+Export your api key as an environment variable in your terminal.
+
+#+begin_src
+export MISTRAL_API_KEY="YOUR_KEY_HERE"
+#+end_src
+
+Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
+
+#+begin_src
+[models]
+code_completion                     inception
+#+end_src
+
+*** Inception
+
+Create an account and get your api key, see [[https://docs.inceptionlabs.ai/get-started/authentication]].
+
+Export your api key as an environment variable in your terminal.
+
+#+begin_src
+export INCEPTION_API_KEY="YOUR_KEY_HERE"
+#+end_src
+
+Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
+
+#+begin_src
+[models]
+code_completion                     inception
+#+end_src
+
+
+
