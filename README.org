@@ -35,7 +35,7 @@ Create an account and get your api key, see [[https://docs.mistral.ai/getting-st
 Export your api key as an environment variable in your terminal.
 
 #+begin_src
-export MISTRAL_API_KEY="YOUR_KEY_HERE"
+export MISTRAL_API_KEY=YOUR_KEY_HERE
 #+end_src
 
 Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
@@ -52,7 +52,7 @@ Create an account and get your api key, see [[https://docs.inceptionlabs.ai/get-
 Export your api key as an environment variable in your terminal.
 
 #+begin_src
-export INCEPTION_API_KEY="YOUR_KEY_HERE"
+export INCEPTION_API_KEY=YOUR_KEY_HERE
 #+end_src
 
 Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
