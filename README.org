@@ -1,17 +1,17 @@
 
-[[text.jpg]]
+[[block.jpg]]
 
 
 * Quickstart
 
 First of all, thank you for trying *Hackerman Text*!
 
-- Suggestions, please submit a [[https://github.com/HackermanAI/Text/discussions/categories/ideas][feature request]]
-- Bugs or other issues, please submit a [[https://github.com/HackermanAI/Text/issues][bug report]]
+- Suggestions, please submit a [[https://github.com/hackerman-inc/text/discussions/categories/feature-requests][feature request]]
+- Bugs or other issues, please submit a [[https://github.com/hackerman-inc/text/issues][bug report]]
 
-Hackerman Text is free for personal or evaluation purposes (non-commercial only). We are 100% user-funded, so please consider purchasing a license to support continued development.
+Hackerman Text is free for personal or evaluation purposes (non-commercial). Commercial use requires a license.
 
-Commercial use requires a license. You can buy one here: [[https://hackerman.ai/]]
+We are 100% user-funded, so please consider [[https://hackerman.ai/#pricing][purchasing a license]] to support continued development.
 
 
 - [[#how-to-setup-code-completion][How to setup code completion]]
