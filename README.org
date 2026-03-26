@@ -12,7 +12,7 @@
 *Ollama*
 
 1. Install Ollama, and download one of the recommended models (e.g. [[https://ollama.com/library/qwen2.5-coder]])
-2. Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, then select /Open Config File/)
+2. Update your ~.hackerman~ config file (/Right-Click/ or ~Cmd + Shift + P~ to open function explorer, then select /Open Config File/)
 3. Find and edit this section:
 
     #+begin_src
@@ -22,42 +22,42 @@
     code_completion                     ollama, qwen2.5-coder:1.5b
     #+end_src
 
-4. Code completion can be triggered with /Code Completion/ (or /Cmd + K/)
+4. Code completion can be triggered with /Code Completion/ (or ~Cmd + K~)
 
 *Mistral*
 
 1. Create Mistral account, and get your api key (see [[https://docs.mistral.ai/getting-started/quickstart]])
-2. Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, then select /Open Config File/)
+2. Update your ~.hackerman~ config file (/Right-Click/ or ~Cmd + Shift + P~ to open function explorer, then select /Open Config File/)
 3. Find and edit this section (replace ~API_KEY~ with your Mistral api key):
 
-#+begin_src
-[models]
+    #+begin_src
+    [models]
+    
+    -- cloud providers
+    code_completion                     mistral, codestral-latest, API_KEY
+    #+end_src
 
--- cloud providers
-code_completion                     mistral, codestral-latest, API_KEY
-#+end_src
-
-4. Code completion can be triggered with /Code Completion/ (or /Cmd + K/)
+4. Code completion can be triggered with /Code Completion/ (or ~Cmd + K~)
 
 *Inception*
 
 1. Create Inception account, and get your api key (see [[https://docs.inceptionlabs.ai/get-started/authentication]])
-2. Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, then select /Open Config File/)
+2. Update your ~.hackerman~ config file (/Right-Click/ or ~Cmd + Shift + P~ to open function explorer, then select /Open Config File/)
 3. Find and edit this section (replace ~API_KEY~ with your Inception api key):
 
-#+begin_src
-[models]
+    #+begin_src
+    [models]
+    
+    -- cloud providers
+    code_completion                     inception, mercury-coder, API_KEY
+    #+end_src
 
--- cloud providers
-code_completion                     inception, mercury-coder, API_KEY
-#+end_src
-
-4. Code completion can be triggered with /Code Completion/ (or /Cmd + K/)
+4. Code completion can be triggered with /Code Completion/ (or ~Cmd + K~)
 
 
 *** How to use inline commands
 
-Inline commands can be triggered with /Inline Commands/ (or /Cmd + Shift + Return/).
+Inline commands can be triggered with /Inline Commands/ (or ~Cmd + Shift + Return~).
 
 *Shell and Python eval*
 
@@ -77,7 +77,7 @@ hello
 *Org-mode code execution*
 
 You an execute /Python/, /Lua/, /JavaScript/, and /Hy/ code in your ~.org~ files.
-Move cursor inside code block and run /Inline Commands/ (or /Cmd + Shift + Return/).
+Move cursor inside code block and run /Inline Commands/ (or ~Cmd + Shift + Return~).
 
 #+begin_src hylang :var name=Michael
 (defn main [name]
