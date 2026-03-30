@@ -353,12 +353,12 @@ _link                               #9ECEF5, #9ECEF5
 
 ** Functions
 
-*accept_autocomplete*
+*** accept_autocomplete
 
 Accept the first item in the auto complete list.
 If no completion list is visible, do nothing.
 
-*auto_detect_lexer*
+*** auto_detect_lexer
 
 Attempt to detect the file type from the file name, then load the corresponding lexer.
 Usually restores syntax highlighting and language-specific behavior after switching to plain text.
