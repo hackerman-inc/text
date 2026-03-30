@@ -1,0 +1,843 @@
+
+* Documentation for Hackerman Text
+
+- [[#configuration][Configuration]]
+- [[#functions][Functions]]
+
+** Configuration
+
+This section keeps an up-to-date version of the default config-file.
+
+*** License
+
+#+begin_src
+
+[license]
+
+path_to_license_file                -- path to license file (e.g. /Users/michael/Desktop/personal.txt, or leave empty for non-commercial version)
+
+#+end_src
+
+*** Editor
+
+#+begin_src
+
+[editor]
+
+font                                SF Mono -- use any installed font or place in /Application Support/Hackerman Text/fonts
+font_weight                         light -- light, normal, medium, bold
+font_size                           15
+
+line_extra_height                   2
+tab_width                           4
+
+theme                               hackerman -- hackerman, borland, light, focus, focus-dark, nostromo, writer, github-dark, kujukuju, dark, ayu
+adaptive_theme                      light, hackerman -- set theme to "adaptive" to use
+
+auto_indent                         true
+auto_complete                       true
+
+file_explorer_root                  -- absolute path to folder to set as root on startup, default is Desktop
+file_types_to_exclude               .dmg, .git, .ttf, .dylib, .so, .venv, .pyc, .zip, .egg, .DS_Store
+
+files_to_open_on_startup            quickstart.org, -- list of absolute paths to files to open on startup, e.g. todo.org, notes.txt, work.py
+
+inline_command_in_files             txt, md, org,
+inline_shell_start_symbol           %
+
+scripts_enabled                     false
+allow_unsafe_scripts                false -- allow imports
+
+click_on_links                      false
+
+-- ui
+
+show_line_numbers                   true
+show_scrollbar                      true
+show_minimap                        false
+show_indent_guides                  true
+show_annotations                    true
+show_ui_borders                     false
+
+use_native_title_bar                false
+
+-- cursor
+
+cursor_width                        2
+cursor_extra_height                 8
+
+cursor_as_block                     false
+cursor_line_highlight               false
+
+cursor_blink                        false
+cursor_blink_period                 530 -- 530 is default
+
+cursor_neon_effect                  false -- experimental
+
+-- statusbar
+
+show_line_info                      true
+show_model_metrics                  true
+show_active_lexer                   true
+show_debug_info                     false
+
+-- misc
+
+ui_font                             SF Mono
+ui_font_weight                      -- leave empty for default, normal
+ui_font_size                        -- leave empty for default, 12pt
+
+scrollbar_width                     8
+minimap_width                       64
+
+open_on_largest_screen              true
+ 
+eol_mode                            lf -- crlf, cr, lf
+eol_symbols_visible                 false
+
+terminal_to_use                     "Terminal" -- for open in terminal shortcuts
+path_to_shell                       /bin/zsh -- for inline shell commands
+
+window_opacity                      1
+selection_opacity                   0.2
+indent_guides_opacity               0.1
+whitespace_opacity                  0.1
+
+unsaved_symbol                      *
+whitespace_symbol                   ▪
+
+vertical_rulers                     -- list of columns
+
+-- experimental
+
+wrap_word                           txt, md,
+-- highlight_line_on_jump              false
+tabs_over_spaces                    false
+font_ligatures                      false -- requires restart
+path_to_scripts_file                -- path to external scripts file, requires restart
+
+#+end_src
+
+*** Keybinds
+
+#+begin_src
+
+[keybinds]
+
+-- Important: Use Comma, Period, Plus, Minus instead of symbols ,.+-
+
+new_file                            Cmd + N
+new_window                          Cmd + Shift + N
+open_file                           Cmd + O
+save_file                           Cmd + S
+save_file_as                        Cmd + Shift + S
+close_file                          Cmd + W
+close_other_files                   Cmd + Shift + W
+reopen_last_closed_file             Cmd + Shift + T
+
+fold_line                           Cmd + L
+fold_all                            Cmd + Shift + L
+code_completion                     Cmd + K
+line_comment                        Cmd + /
+zoom_in                             Cmd + =,                Cmd + Plus
+zoom_out                            Cmd + _,                Cmd + Minus
+toggle_split_editor                 Cmd + \
+show_file_explorer                  Cmd + P
+-- show_outline_panel                  Cmd + Shift + E
+show_buffer_explorer                Control + Tab
+show_function_explorer              Cmd + Shift + P
+open_terminal_at_file               Cmd + T
+open_config_file
+open_scripts_file
+reveal_in_finder
+
+select_all                          Cmd + A
+undo                                Cmd + Z,                Control + /
+redo                                Cmd + Shift + Z,        Control + Shift + /
+lowercase                           Option + L
+uppercase                           Option + U
+cancel                              Escape,                 Control + G
+newline                             Return,                 Cmd + Return,           Control + J
+newline_at_end_of_line              Shift + Return
+tab                                 Tab
+backtab                             Shift + Tab
+center_on_cursor                    Control + L
+line_indent                         Cmd + ]
+line_unindent                       Cmd + [
+selection_duplicate
+move_line_up
+move_line_down
+select_next_match                   Cmd + E
+unselect_last_match                 Cmd + Shift + E
+
+open_file_in_new_window
+copy_path_to_file                   Cmd + Shift + C
+reset_window_position
+toggle_read_only
+toggle_newspaper_scroll
+select_matches
+show_license_info
+open_diff_in_new_buffer
+go_to_line
+tear_off_buffer
+reset_zoom                          Cmd + 0
+replace_all_eol
+replace_tabs_with_spaces
+toggle_indent_guides
+
+plain_text_lexer
+auto_detect_lexer
+
+tab_width_2_spaces
+tab_width_4_spaces
+
+indent_with_spaces
+indent_with_tabs
+
+find_in_file                        Cmd + F
+show_search_explorer                Cmd + Shift + F
+
+accept_autocomplete
+python_eval_line                    Cmd + Option + E
+
+-- this is used to execute org-mode code, run shell commands, and evaluate expressions
+inline_command                      Cmd + Shift + Return
+
+-- Native MacOS keys bindings for document are rebound to para by default due to misclick prone
+document_start                      Option + Comma
+document_start_extend               Option + Shift + Comma
+document_end                        Option + Period
+document_end_extend                 Option + Shift + Period
+
+home
+home_extend
+
+char_left                           Left,                   Control + B
+char_left_extend                    Shift + Left,           Control + Shift + B
+char_right                          Right,                  Control + F
+char_right_extend                   Shift + Right,          Control + Shift + F
+
+line_up                             Up,                     Control + P
+line_up_extend                      Shift + Up,             Control + Shift + P
+line_down                           Down,                   Control + N
+line_down_extend                    Shift + Down,           Control + Shift + N
+
+line_up_start                       Option + Up
+line_up_start_extend                Option + Shift + Up
+
+line_down_end                       Option + Down
+line_down_end_extend                Option + Shift + Down
+
+line_start                          Cmd + Left,             Control + A
+line_start_extend                   Cmd + Shift + Left,     Control + Shift + A
+line_end                            Cmd + Right,            Control + E
+line_end_extend                     Cmd + Shift + Right,    Control + Shift + E
+
+line_scroll_up                      Control + Up
+line_scroll_down                    Control + Down
+line_add_caret_up                   Control + Shift + Up
+line_add_caret_down                 Control + Shift + Down
+
+duplicate_line                      Cmd + Shift + D
+transpose_line
+reverse_line
+
+copy                                Cmd + C
+cut                                 Cmd + X
+paste                               Cmd + V
+
+paragraph_up                        Cmd + Up,               Option + A              -- MacOS default is Option+Up
+paragraph_up_extend                 Cmd + Shift + Up,       Option + Shift + A      -- MacOS default is Option+Shift+Up
+paragraph_down                      Cmd + Down,             Option + E              -- MacOS default is Option+Down
+paragraph_down_extend               Cmd + Shift + Down,     Option + Shift + E      -- MacOS default is Option+Shift+Down
+
+word_left                           Option + Left,          Option + B
+word_left_extend                    Option + Shift + Left,  Option + Shift + B
+word_right
+word_right_extend
+
+word_left_end
+word_left_end_extend
+word_right_end                      Option + Right,         Option + F
+word_right_end_extend               Option + Shift + Right, Option + Shift + F
+
+word_part_left                      Control + Left
+word_part_left_extend               Control + Shift + Left
+word_part_right                     Control + Right
+word_part_right_extend              Control + Shift + Right
+
+page_up                             Option + V
+page_up_extend                      Option + Shift + V
+page_down                           Control + V
+page_down_extend                    Control + Shift + V
+
+stuttered_page_up
+stuttered_page_down
+stuttered_page_up_extend
+stuttered_page_down_extend
+
+delete                              Backspace
+delete_not_newline                  Shift + Backspace
+delete_right                        Cmd + D,                Control + D             -- delete selection if selection is not empty
+delete_word_left                    Option + Backspace,     Control + Backspace
+delete_word_right                   Option + D
+delete_line                         Cmd + Shift + K
+delete_line_left                    Cmd + Backspace,        Control + Shift + Backspace
+delete_line_right                   Control + K
+delete_paragraph_left               Option + Shift + K
+delete_paragraph_right              Option + K
+
+-- pane navigation
+
+focus_main_editor                   Cmd + Comma
+focus_split_editor                  Cmd + Period
+previous_tab                        Cmd + Shift + Comma
+next_tab                            Cmd + Shift + Period
+
+-- quick switch buffer
+switch_to_buffer_1                  Cmd + 1
+switch_to_buffer_2                  Cmd + 2
+switch_to_buffer_3                  Cmd + 3
+switch_to_buffer_4                  Cmd + 4
+switch_to_buffer_5                  Cmd + 5
+switch_to_buffer_6                  Cmd + 6
+switch_to_buffer_7                  Cmd + 7
+switch_to_buffer_8                  Cmd + 8
+switch_to_buffer_9                  Cmd + 9
+
+#+end_src
+
+*** User
+
+#+begin_src
+
+[user]
+
+-- Place key bindings to your own functions here
+-- function_name                    Modifier + Key
+
+toggle_system_appearance
+build_and_run
+
+#+end_src
+
+*** Theme: ~hackerman~
+
+#+begin_src
+
+[hackerman]
+
+background                          #102329 -- #16181C
+foreground                          #87919D
+text_color                          #FFFFFF
+cursor                              #69EBFA
+
+default                             #FFFFFF
+keyword                             #E67D74
+class                               #D0C5A9
+name                                #D0C5A9
+lambda                              #D699B5
+string                              #D4BC7D
+number                              #D699B5
+operator                            #E0AD82
+comment                             #87919D
+special                             #69EBFA
+type                                #9ECEF5
+boolean                             #D699B5
+builtin                             #E0AD82
+
+_highlight                          #D4BC7D
+_link                               #9ECEF5, #9ECEF5
+
+#+end_src
+
+** Functions
+
+*accept_autocomplete*
+Accept the first item in the auto complete list.
+If no completion list is visible, do nothing.
+
+*auto_detect_lexer*
+Attempt to detect the file type from the file name, then load the corresponding lexer.
+Usually restores syntax highlighting and language-specific behavior after switching to plain text.
+
+*backtab*
+Perform reverse tab.
+Typically unindents the current line or selected lines.
+
+*cancel*
+Cancel active transient UI or editing states.
+Close open dialog windows.
+Dismiss popups.
+Collapse multi-cursor to a single cursor.
+Abort incremental actions such as search focus or pending command states.
+
+*center_on_cursor*
+Center the current view on the cursor position without changing the cursor location.
+
+*char_left*
+Move the cursor one character to the left.
+
+*char_left_extend*
+Extend the selection one character to the left.
+
+*char_right*
+Move the cursor one character to the right.
+
+*char_right_extend*
+Extend the selection one character to the right.
+
+*close_file*
+Close the current file or buffer.
+If the file has unsaved changes, a save prompt may be shown.
+
+*close_other_files*
+Close all open files except the current one.
+Unsaved buffers may trigger save prompts.
+
+*code_completion*
+Trigger AI code completion at the cursor position.
+Uses the configured fill-in-the-middle backend, such as Ollama, Mistral, or Inception, as defined in the config file.
+
+*copy*
+Copy the current selection to the clipboard.
+
+*copy_path_to_file*
+Copy the full path of the current file to the clipboard.
+
+*cut*
+Cut the current selection to the clipboard.
+
+*delete*
+Delete the character to the left of the cursor.
+If text is selected, delete the selection instead.
+
+*delete_line*
+Delete the current line or all lines touched by the current selection(s).
+
+*delete_line_left*
+Delete from the cursor to the start of the line.
+
+*delete_line_right*
+Delete from the cursor to the end of the line.
+
+*delete_not_newline*
+Delete the character to the left of the cursor, but do not remove line breaks.
+Useful for preserving line structure while deleting indentation or content.
+
+*delete_paragraph_left*
+Delete from the cursor backward to the start of the current paragraph.
+Paragraph boundaries usually correspond to blank-line-separated blocks.
+
+*delete_paragraph_right*
+Delete from the cursor forward to the end of the current paragraph.
+
+*delete_right*
+Delete the character to the right of the cursor.
+If text is selected, delete the selection instead.
+
+*delete_word_left*
+Delete the word to the left of the cursor.
+
+*delete_word_right*
+Delete the word to the right of the cursor.
+
+*document_end*
+Move the cursor to the end of the document.
+
+*document_end_extend*
+Extend the selection to the end of the document.
+
+*document_start*
+Move the cursor to the start of the document.
+
+*document_start_extend*
+Extend the selection to the start of the document.
+
+*duplicate_line*
+Duplicate the current line.
+If multiple lines are selected, duplicate the selected lines.
+
+*find_in_file*
+Open the in-file search UI for the current buffer.
+
+*focus_main_editor*
+Move keyboard focus to the main editor pane.
+
+*focus_split_editor*
+Move keyboard focus to the split editor pane.
+
+*fold_all*
+Fold/unfold all foldable regions in the current document.
+
+*fold_line*
+Toggle folding on the fold block at the current line.
+If the current line is not a fold header, the nearest enclosing fold may be used.
+
+*go_to_line*
+Open the go-to-line prompt and jump to a specified line number.
+
+*home*
+Move to the logical or visible home position on the current line.
+
+*home_extend*
+Extend the selection to the home position on the current line.
+
+*indent_with_spaces*
+Configure indentation to insert spaces when indenting or pressing Tab.
+This is for current buffer only and not persistent on close.
+
+*indent_with_tabs*
+Configure indentation to insert tab characters when indenting or pressing Tab.
+This is for current buffer only and not persistent on close.
+
+*inline_command*
+Execute the inline command at the cursor.
+This is used for org-mode code execution, shell commands, and expression evaluation.
+Output may be inserted inline or into a results block depending on context.
+
+*line_add_caret_down*
+Add an additional caret on the line below the current caret.
+
+*line_add_caret_up*
+Add an additional caret on the line above the current caret.
+
+*line_comment*
+Toggle line comments on the current line or selected lines.
+Uses the active lexer or file type to determine the comment syntax.
+
+*line_down*
+Move the cursor one line down.
+
+*line_down_end*
+Move to the end of the next line.
+
+*line_down_end_extend*
+Extend the selection to the end of the next line.
+
+*line_down_extend*
+Extend the selection one line down.
+
+*line_down_start*
+Move to the start of the next line.
+
+*line_down_start_extend*
+Extend the selection to the start of the next line.
+
+*line_end*
+Move the cursor to the end of the current line.
+
+*line_end_extend*
+Extend the selection to the end of the current line.
+
+*line_indent*
+Indent the current line or all selected lines.
+
+*line_scroll_down*
+Scroll the view down by one line without moving the cursor, when possible.
+
+*line_scroll_up*
+Scroll the view up by one line without moving the cursor, when possible.
+
+*line_start*
+Move the cursor to the start of the current line.
+
+*line_start_extend*
+Extend the selection to the start of the current line.
+
+*line_unindent*
+Unindent the current line or all selected lines.
+
+*line_up*
+Move the cursor one line up.
+
+*line_up_extend*
+Extend the selection one line up.
+
+*line_up_start*
+Move to the start of the previous line.
+
+*line_up_start_extend*
+Extend the selection to the start of the previous line.
+
+*lowercase*
+Convert the selected text to lowercase.
+
+*move_line_down*
+Move the current line, or selected lines, one line downward.
+
+*move_line_up*
+Move the current line, or selected lines, one line upward.
+
+*new_file*
+Create a new empty file.
+
+*new_window*
+Open a new window.
+
+*newline*
+Insert a newline at the cursor position.
+If text is selected, replace the selection.
+
+*newline_at_end_of_line*
+Insert a newline at the end of the current line, regardless of cursor column.
+
+*next_tab*
+Switch to the next open file tab.
+
+*open_config_file*
+Open the configuration file.
+
+*open_diff_in_new_buffer*
+Open a diff view in a new buffer.
+
+*open_file*
+Open a file from disk.
+
+*open_file_in_new_window*
+Open the current file in a new window.
+
+*open_scripts_file*
+Open the user scripts file.
+
+*open_terminal_at_file*
+Open a terminal at the current file's directory.
+
+*page_down*
+Move the view and cursor down by approximately one page.
+
+*page_down_extend*
+Extend the selection downward by approximately one page.
+
+*page_up*
+Move the view and cursor up by approximately one page.
+
+*page_up_extend*
+Extend the selection upward by approximately one page.
+
+*paragraph_down*
+Move the cursor to the next paragraph boundary.
+
+*paragraph_down_extend*
+Extend the selection to the next paragraph boundary.
+
+*paragraph_up*
+Move the cursor to the previous paragraph boundary.
+
+*paragraph_up_extend*
+Extend the selection to the previous paragraph boundary.
+
+*paste*
+Paste clipboard contents at the cursor position.
+If text is selected, replace the selection.
+
+*plain_text_lexer*
+Switch the current file to plain text mode.
+Disables language-specific highlighting and related lexer behavior.
+
+*previous_tab*
+Switch to the previous open file tab.
+
+*python_eval_line*
+Evaluate the current line as Python.
+Intended for quick inline execution.
+
+*redo*
+Redo the most recently undone edit.
+
+*reopen_last_closed_file*
+Reopen the most recently closed file, if available.
+
+*replace_all_eol*
+Normalize all end-of-line characters in the current file to the configured line ending style.
+
+*replace_tabs_with_spaces*
+Convert tab characters in the current file into spaces according to the current tab width.
+
+*reset_window_position*
+Reset the window to its default size and/or position.
+
+*reset_zoom*
+Reset editor zoom level to the default size.
+
+*reveal_in_finder*
+Reveal the current file in Finder.
+
+*reverse_line*
+Reverse the characters in the current line, or each selected line.
+
+*save_file*
+Save the current file.
+
+*save_file_as*
+Save the current file under a new name or path.
+
+*select_all*
+Select the entire contents of the current document.
+
+*select_matches*
+Select all matches of the current selection or search term in the current file.
+Often used to create multiple cursors for simultaneous editing.
+
+*select_next_match*
+Find the next occurrence of the current selection and add it as another selection.
+Usually does not wrap around the file.
+
+*selection_duplicate*
+Duplicate the current selection in place.
+If there is no selection, behavior may fall back to duplicating the current line.
+
+*show_buffer_explorer*
+Open the buffer explorer for quick switching between open buffers.
+
+*show_file_explorer*
+Show or focus the file explorer panel.
+
+*show_function_explorer*
+Open the function explorer for navigating symbols or functions in the current file.
+
+*show_license_info*
+Show license and registration information.
+
+*show_outline_panel*
+Show or focus the outline panel for structural navigation of the current file.
+
+*show_search_explorer*
+Show the search explorer, typically for project-wide search results.
+
+*stuttered_page_down*
+Move down by a smaller-than-full-page step.
+Useful for keeping more visual context than a full page jump.
+
+*stuttered_page_down_extend*
+Extend the selection downward by a small page step.
+
+*stuttered_page_up*
+Move up by a smaller-than-full-page step.
+
+*stuttered_page_up_extend*
+Extend the selection upward by a small page step.
+
+*switch_to_buffer_1*
+Switch to the first visible/open buffer slot.
+
+*switch_to_buffer_2*
+Switch to the second visible/open buffer slot.
+
+*switch_to_buffer_3*
+Switch to the third visible/open buffer slot.
+
+*switch_to_buffer_4*
+Switch to the fourth visible/open buffer slot.
+
+*switch_to_buffer_5*
+Switch to the fifth visible/open buffer slot.
+
+*switch_to_buffer_6*
+Switch to the sixth visible/open buffer slot.
+
+*switch_to_buffer_7*
+Switch to the seventh visible/open buffer slot.
+
+*switch_to_buffer_8*
+Switch to the eighth visible/open buffer slot.
+
+*switch_to_buffer_9*
+Switch to the ninth visible/open buffer slot.
+
+*tab*
+Insert a tab character or indent the current line or selection, depending on editor settings and context.
+
+*tab_width_2_spaces*
+Set the tab width to 2 spaces.
+
+*tab_width_4_spaces*
+Set the tab width to 4 spaces.
+
+*tear_off_buffer*
+Detach the current buffer into a separate window or independent view.
+
+*toggle_indent_guides*
+Show or hide indentation guide lines.
+
+*toggle_newspaper_scroll*
+Toggle newspaper scroll mode.
+This usually changes how horizontal overflow is handled for long lines.
+
+*toggle_read_only*
+Toggle read-only mode for the current buffer.
+
+*toggle_split_editor*
+Show or hide the split editor, or toggle between single-pane and split-pane layout.
+
+*transpose_line*
+Transpose lines near the cursor.
+Typically swaps the current line with the adjacent line.
+
+*undo*
+Undo the most recent edit.
+
+*unselect_last_match*
+Remove the most recently added selection from a multi-selection set.
+
+*uppercase*
+Convert the selected text to uppercase.
+
+*word_left*
+Move the cursor left by one word.
+
+*word_left_end*
+Move to the end boundary of the previous word.
+
+*word_left_end_extend*
+Extend the selection to the end boundary of the previous word.
+
+*word_left_extend*
+Extend the selection left by one word.
+
+*word_part_left*
+Move left by one word part.
+Useful for camelCase, snake_case, or similar mixed identifiers.
+
+*word_part_left_extend*
+Extend the selection left by one word part.
+
+*word_part_right*
+Move right by one word part.
+
+*word_part_right_extend*
+Extend the selection right by one word part.
+
+*word_right*
+Move the cursor right by one word.
+
+*word_right_end*
+Move to the end boundary of the next word.
+
+*word_right_end_extend*
+Extend the selection to the end boundary of the next word.
+
+*word_right_extend*
+Extend the selection right by one word.
+
+*zoom_in*
+Increase the editor zoom level.
+
+*zoom_out*
+Decrease the editor zoom level.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
