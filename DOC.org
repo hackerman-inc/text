@@ -43,7 +43,7 @@ auto_indent                         true
 auto_complete                       true
 
 file_explorer_root                  -- absolute path to folder to set as root on startup, default is Desktop
-file_types_to_exclude               .dmg, .git, .ttf, .dylib, .so, .venv, .pyc, .zip, .egg, .DS_Store
+file_types_to_exclude               .dmg, .app, .git, .ttf, .dylib, .so, .venv, .pyc, .zip, .egg, .DS_Store
 
 files_to_open_on_startup            quickstart.org, -- list of absolute paths to files to open on startup, e.g. todo.org, notes.txt, work.py
 
