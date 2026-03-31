@@ -112,3 +112,12 @@ You can provide a path to your own ~.py~ file if stored elsewhere.
 path_to_scripts_file                path/to/plugins.py -- path to scripts file, requires restart
 #+end_src
 
+*** Other and misc
+
+- Right click to /Show Function Explorer/ (or ~Cmd + Shift + P~), this list shows all active key bindings
+- Double click on line number to /Fold Line/ (or ~Cmd + L~)
+- Double click on word to select, ~Cmd~ plus double click on another word to add to selection
+- Select text then /Select Next Match/ (or ~Cmd + E~) to select next exact match, /Unselect Next Match/ (or ~Cmd + Shift + E~) to unselect last added match
+- Find with /Find In File/ (or ~Cmd + F~), ~Esc~, then /Select Matches/ to select/add cursor to each match
+- Select brace to highlight open and/or close brace (on-demand brace match)
+- If not working out of projects (e.g. dropped folder on editor), /Show File Explorer/ (or ~Cmd + P~) to open file epxplorer, then type e.g. ~hackerman/~ to quickly find files in specific folders
