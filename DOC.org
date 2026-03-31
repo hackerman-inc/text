@@ -2,6 +2,10 @@
 * Documentation for Hackerman Text
 
 - [[#configuration][Configuration]]
+    - [[#license][License]]
+    - [[#editor][Editor]]
+    - [[#keybinds][Keybinds]]
+    - [[#themes][Themes]]
 - [[#functions][Functions]]
 
 ** Configuration
@@ -307,7 +311,7 @@ switch_to_buffer_9                  Cmd + 9
 
 #+end_src
 
-*** User
+Place keybindings for custom functions on the ~[user]~ section.
 
 #+begin_src
 
@@ -321,7 +325,11 @@ build_and_run
 
 #+end_src
 
-*** Theme: ~hackerman~
+*** Themes
+
+This is the default ~hackerman~ theme.
+Define a new theme by giving it a name, such as ~[my-custom-theme]~, and adding colors to the below keys.
+Many keys are optional.
 
 #+begin_src
 
@@ -348,6 +356,24 @@ builtin                             #E0AD82
 
 _highlight                          #D4BC7D
 _link                               #9ECEF5, #9ECEF5
+
+-- error                               #FC4646, #FC4646 -- traffic light red
+-- warning                             #FCAF24, #FCAF24 -- traffic light yellow
+-- success                             #28C032, #28C032 -- traffic light green
+
+-- _selection
+-- _bold
+-- _italic
+-- _underline
+-- _verbatim
+-- _strike
+-- _code
+-- _link
+-- _todo
+-- _annotation
+
+-- _title_bar
+-- _status_bar
 
 #+end_src
 
