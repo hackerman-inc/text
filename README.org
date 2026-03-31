@@ -3,7 +3,7 @@
 
 - [[https://github.com/hackerman-inc/text/issues][Issues]]
 - [[https://github.com/hackerman-inc/text/discussions/categories/feature-requests][Feature requests]]
-
+- [[https://github.com/hackerman-inc/text/blob/main/DOC.org][Documentation]]
 
 ** FAQ
 
