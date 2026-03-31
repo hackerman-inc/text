@@ -10,6 +10,7 @@
 - [[#how-to-setup-code-completion][How to setup code completion]]
 - [[#how-to-use-inline-commands][How to use inline commands]]
 - [[#how-to-use-custom-scripts][How to use custom scripts]]
+- [[#other-and-misc][Other and misc]]
 
 *** How to setup code completion
 
