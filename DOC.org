@@ -378,6 +378,33 @@ _link                               #9ECEF5, #9ECEF5
 
 #+end_src
 
+*github-dark*
+
+#+begin_src
+[github-dark]                 
+
+background                         #0F1217
+foreground                         #868D97
+text_color                         #E3E9EF
+cursor                             #59C2FF
+
+default                            #E3E9EF
+keyword                            #FB6E65
+class                              #EE9B52
+name                               #D2A8FF
+lambda                             #D2A8FF
+string                             #A5D6FF
+number                             #77BDFB
+operator                           #77BDFB
+comment                            #9198A1
+special                            #79C0FF
+type                               #79C0FF
+boolean                            #79C0FF
+builtin                            #77BDFB
+
+_error                             #FC4646, #FC4646
+#+end_src
+
 ** Editor commands
 
 This section keeps a list of available built-in editor commands.
