@@ -968,6 +968,7 @@ Zoom out by 1 point.
 
 This section keeps an up-to-date version of the default scripts-file.
 Use this as an example or base to build your own custom editor commands.
+See how to add key bindings to custom functions in *[[#keybinds][Keybinds]]*.
 
 #+begin_src
 # default scripts-file for Hackerman Text
