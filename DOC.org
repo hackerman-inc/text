@@ -64,8 +64,6 @@ show_indent_guides                  true
 show_annotations                    true
 show_ui_borders                     true
 
-use_native_title_bar                false
-
 -- cursor
 
 cursor_width                        2
@@ -84,7 +82,6 @@ cursor_neon_effect                  false -- experimental
 show_line_info                      true
 show_model_metrics                  true
 show_active_lexer                   true
-show_debug_info                     false
 
 -- misc
 
