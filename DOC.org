@@ -19,7 +19,7 @@ This section keeps an up-to-date version of the default config-file.
 
 [license]
 
-path_to_license_file                -- path to license file (e.g. /Users/michael/Desktop/personal.txt, or leave empty for non-commercial version)
+path_to_license_file                -- path to license file, e.g. /Users/michael/Desktop/license.json
 
 #+end_src
 
@@ -75,8 +75,6 @@ cursor_line_highlight               false
 cursor_blink                        false
 cursor_blink_period                 530 -- 530 is default
 
-cursor_neon_effect                  false -- experimental
-
 -- statusbar
 
 show_line_info                      true
@@ -93,6 +91,8 @@ scrollbar_width                     8
 minimap_width                       64
 
 open_on_largest_screen              true
+dim_non_active_editors              false
+fixed_line_number_width             false
  
 eol_mode                            lf -- crlf, cr, lf
 eol_symbols_visible                 false
@@ -113,7 +113,6 @@ vertical_rulers                     -- list of columns
 -- experimental
 
 wrap_word                           txt, md,
--- highlight_line_on_jump              false
 tabs_over_spaces                    false
 font_ligatures                      false -- requires restart
 path_to_scripts_file                -- path to external scripts file, requires restart
@@ -126,7 +125,7 @@ path_to_scripts_file                -- path to external scripts file, requires r
 
 [keybinds]
 
--- Important: Use Comma, Period, Plus, Minus instead of symbols ,.+-
+-- Important: Use Comma, Period, Plus, Minus for symbols , . + -
 
 new_file                            Cmd + N
 new_window                          Cmd + Shift + N
@@ -145,7 +144,7 @@ zoom_in                             Cmd + =,                Cmd + Plus
 zoom_out                            Cmd + _,                Cmd + Minus
 toggle_split_editor                 Cmd + \
 show_file_explorer                  Cmd + P
--- show_outline_panel                  Cmd + Shift + E
+show_outline_panel
 show_buffer_explorer                Control + Tab
 show_function_explorer              Cmd + Shift + P
 open_terminal_at_file               Cmd + T
@@ -186,6 +185,7 @@ reset_zoom                          Cmd + 0
 replace_all_eol
 replace_tabs_with_spaces
 toggle_indent_guides
+sort_selected_lines
 
 plain_text_lexer
 auto_detect_lexer
@@ -290,13 +290,12 @@ delete_paragraph_left               Option + Shift + K
 delete_paragraph_right              Option + K
 
 -- pane navigation
+focus_main_editor                   Cmd + Shift + Comma
+focus_split_editor                  Cmd + Shift + Period
+previous_tab                        Cmd + Comma
+next_tab                            Cmd + Period
 
-focus_main_editor                   Cmd + Comma
-focus_split_editor                  Cmd + Period
-previous_tab                        Cmd + Shift + Comma
-next_tab                            Cmd + Shift + Period
-
--- quick switch buffer
+-- quick switch to buffer
 switch_to_buffer_1                  Cmd + 1
 switch_to_buffer_2                  Cmd + 2
 switch_to_buffer_3                  Cmd + 3
@@ -315,8 +314,7 @@ Place key bindings for custom editor commands in the ~[user]~ section.
 
 [user]
 
--- Place key bindings to your own functions here
--- function_name                    Modifier + Key
+-- List your custom functions here, set key binding using same format as above
 
 toggle_system_appearance
 build_and_run
@@ -333,7 +331,7 @@ Many keys are optional.
 
 [hackerman]
 
-background                          #102329 -- #16181C
+background                          #102329
 foreground                          #87919D
 text_color                          #FFFFFF
 cursor                              #69EBFA
@@ -994,6 +992,7 @@ Use this as an example or base to build your own custom editor commands.
 See how to add key bindings to custom functions in *[[#keybinds][Keybinds]]*.
 
 #+begin_src
+
 # default scripts-file for Hackerman Text
 
 
@@ -1025,6 +1024,6 @@ def build_and_run(self):
         return
     
     run_in_terminal(BUILD_MAP[self.file_type])
-#+end_src
 
+#+end_src
 
